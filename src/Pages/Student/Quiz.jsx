@@ -56,7 +56,7 @@ function Quiz(props) {
     // PostScore || savescore in data base Function
 
     const SaveScore = () => {
-        console.log(props.score)
+        
 
         const payload = {
             id: LoginUser._id,
@@ -102,7 +102,7 @@ function Quiz(props) {
 
                 {/* Multi answer question */}
 
-                {props.question.multiAnswer.length > 0 ? <div className='text-danger mt-3 '>
+                {props.question?.multiAnswer.length > 0 ? <div className='text-danger mt-3 '>
                     Multi Answer Question
                 </div> : ""}
 
