@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { PostScore } from '../../Redux/AppReducer/Action'
 import { LoginUserData } from '../../Redux/AuthReducer/action'
 import style from "./Quiz.module.css"
+import Badge from 'react-bootstrap/Badge';
 function Quiz(props) {
 
 
@@ -93,25 +94,29 @@ function Quiz(props) {
     return (
         <>
 
-            <div style={{ marginTop: "8rem" }} className=' bg-dark col-md-6  container center_div text-center border border-dark rounded-3' >
-        
-       
-        
+            <div style={{ marginTop: "8rem", position: "relative" }} className=' bg-dark col-md-6  container center_div text-center border border-dark rounded-3' >
+
+
+
                 {/* Difculty */}
                 {props.question ? <>
-                    <div
-                        className='text-light container center_div  position-absolute fs-5 mt-2' >
-                        Diffculty:<span className='ps-2'  >{props.question?.difficulty}</span></div>
 
+                    <div id={style.difficulty}>
+                        <Button className='text-black ' variant="warning">
+                            Diffculty: <Badge bg="danger">{props.question?.difficulty}</Badge>
 
+                        </Button>
+                    </div>
                     {/* Multi answer question */}
-
-                    {props.question?.multiAnswer.length > 0 ? <div className='text-danger mt-3 '>
-                        Multi Answer Question
+                    {props.question?.multiAnswer.length > 0 ? <div id={style.multiAnswer}>
+                        <Badge pill bg="danger" >
+                            Multi Answer Question
+                        </Badge>
                     </div> : ""}
 
+
                     {/* Question */}
-                    <div className='text-light mt-5 fs-6 fw-bold' >{` ${questionCount}) ${props.question.question}`} </div>
+                    <div id={style.question} className='text-light mt-5 fs-6 fw-bold' >{` ${questionCount}) ${props.question.question}`} </div>
 
                     <div id={style.options} className='mt-5'>
                         {/* Option1 */}

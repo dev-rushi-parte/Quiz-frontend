@@ -15,11 +15,11 @@ function Start(props) {
 
                 <h1 className='text-white mt-5 mb-5' >Wel-Come To Quiz</h1>
 
-                 <div className='text-light container center_div mb-4  fs-5 mt-2'>
-                   Total Questions: {props.SortedData?.length}
+                <div className='text-light container center_div mb-4  fs-5 mt-2'>
+                    Total Questions: {props.SortedData?.length}
                 </div>
-                <Button onClick={() => props.setStart(true)} className='col-lg-6 col-sm-5 col-5 mb-5' >Start</Button>
-            </div>
+                <Button disabled={props.SortedData?.length < 10 ? true : false} onClick={() => props.setStart(true)} className='col-lg-6 col-sm-5 col-5 mb-5' >Start</Button>
+            </div >
         </>
     )
 }
