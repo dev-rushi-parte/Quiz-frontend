@@ -95,9 +95,7 @@ function Quiz(props) {
 
             <div style={{ marginTop: "8rem" }} className=' bg-dark col-md-6  container center_div text-center border border-dark rounded-3' >
         
-        <div className='text-light container center_div mb-4  fs-5 mt-2'>
-                   Total Questions: {props.SortedData?.length}
-                </div>
+       
         
                 {/* Difculty */}
                 {props.question ? <>
