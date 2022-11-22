@@ -56,9 +56,9 @@ function QuizPage() {
                 <>
                     {
                         start ?
-                            SortedData.length == 10 ? <Quiz SortedData={SortedData} score={score} setExit={setExit} setScore={setScore} question={SortedData[current]} setCurrent={setCurrent} /> : "Loading..."
+                            SortedData.length == 10 ? <Quiz score={score} setExit={setExit} setScore={setScore} question={SortedData[current]} setCurrent={setCurrent} /> : "Loading..."
                             :
-                            <Start setStart={setStart} />
+                            <Start SortedData={SortedData}  setStart={setStart} />
                     }
                 </>
 
