@@ -41,7 +41,7 @@ function QuizPage() {
 
     useEffect(() => {
         GetData()
-    }, [])
+    }, [allQuestions<10])
 
 
 
